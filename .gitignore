@@ -1,5 +1,5 @@
-itan.aux
-itan.log
+*.aux
+*.log
 itan.out
 itan.toc
 
