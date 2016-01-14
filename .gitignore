@@ -1,5 +1,6 @@
 *.aux
 *.log
-itan.out
-itan.toc
+*.synctex.gz
+*.out
+*.toc
 
