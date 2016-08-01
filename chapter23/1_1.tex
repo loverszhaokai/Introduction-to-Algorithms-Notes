@@ -1,0 +1,32 @@
+\section {Notes}
+
+\begin{enumerate}[label=(\roman*)]
+\item There maybe more than one MST in a forest.
+\item The number of all the edges in the MST is equal to $\boldsymbol{V} - 1$.
+\end{enumerate}
+
+\section {Growing a minimum spanning tree}
+
+\subsection {A}
+A is a subset of some minimum spanning tree.
+
+\subsection {Safe edge}
+Safe edge is a edge that add to A and A is also a subset of some minimum
+spanning tree.
+
+\subsection {Generic-MST}
+
+\textbf{GENERIC-MST}(G, $\omega$)\\
+1\space A = $\varnothing$\\
+2\space \textbf{while} A does not form a spanning tree\\
+3\space\space\space\space find an edge($\mu$, $\upsilon$) that is
+\textbf{safe edge} for A\\
+4\space\space\space\space A = A $\cup$ {($\mu$, $\upsilon$)}\\
+5\space return A\\
+\\
+\textbf{Initialization:} After line 1, the set A trivially satisfies the loop
+invariant.\\
+\textbf{Maintenance:} The loop in lines 2-4 maintains the invariant by adding
+only safe edges.\\
+\textbf{Termination:} All edges added to A are in a minimum spanning tree, and
+so the set A returned in line 5 must be a minimum spanning tree.

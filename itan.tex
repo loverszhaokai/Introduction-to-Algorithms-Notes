@@ -1,13 +1,39 @@
 \documentclass [11pt]{book}
 
-%packages
+% packages
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage {bookmark}
 \usepackage {color}
-\usepackage {xcolor}
+\usepackage{enumitem}
 \usepackage {graphicx}
 \usepackage {hyperref}
+\usepackage {libertine}
+\usepackage{listings}
+\usepackage {xcolor}
 
 %configurations
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
 
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
 
 %alias
 
@@ -62,6 +88,10 @@
 %part 6
 
 \part {Graph Algorithms}
+
+\chapter {Minimum Spanning Tree}
+
+\include {chapter23/1_1}
 
 %part 7
 
