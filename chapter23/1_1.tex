@@ -7,10 +7,12 @@
 
 \section {Growing a minimum spanning tree}
 
-\subsection {A}
-A is a subset of some minimum spanning tree.
+\subsection {Definition}
 
-\subsection {Safe edge}
+\subsubsection {A}
+A is a subset of some minimum spanning tree.  
+
+\subsubsection {Safe edge}
 Safe edge is a edge that add to A and A is also a subset of some minimum
 spanning tree.
 
@@ -30,3 +32,12 @@ invariant.\\
 only safe edges.\\
 \textbf{Termination:} All edges added to A are in a minimum spanning tree, and
 so the set A returned in line 5 must be a minimum spanning tree.
+
+\subsection {Theorem}
+
+Let $G=(V, E)$ be a connected, undirected graph with a real-valued weight
+function $\omega$ defined on $E$. Let $A$ be a subset of $E$ that is inclued in
+some minimum spanning tree for $G$, let $(S, V - S)$ be any cut of G that
+respects A, and let $(u, v)$ be a light edge crossing $(S, V - S)$. Then, edge
+$(u, v)$ is \textbf{safe} for A.
+
