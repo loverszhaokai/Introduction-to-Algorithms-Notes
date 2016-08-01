@@ -18,13 +18,13 @@ spanning tree.
 
 \subsection {Generic-MST}
 
-\textbf{GENERIC-MST}(G, $\omega$)\\
-1\space A = $\varnothing$\\
-2\space \textbf{while} A does not form a spanning tree\\
-3\space\space\space\space find an edge($\mu$, $\upsilon$) that is
-\textbf{safe edge} for A\\
-4\space\space\space\space A = A $\cup$ {($\mu$, $\upsilon$)}\\
-5\space return A\\
+\textbf{GENERIC-MST}(G, $w$)\\
+1\space $A$ = $\varnothing$\\
+2\space \textbf{while} $A$ does not form a spanning tree\\
+3\space\space\space\space find an edge $(u, v)$ that is
+\textbf{safe edge} for $A$\\
+4\space\space\space\space $A = A \cup \{(u, v)\}$\\
+5\space return $A$\\
 \\
 \textbf{Initialization:} After line 1, the set A trivially satisfies the loop
 invariant.\\
@@ -39,5 +39,40 @@ Let $G=(V, E)$ be a connected, undirected graph with a real-valued weight
 function $\omega$ defined on $E$. Let $A$ be a subset of $E$ that is inclued in
 some minimum spanning tree for $G$, let $(S, V - S)$ be any cut of G that
 respects A, and let $(u, v)$ be a light edge crossing $(S, V - S)$. Then, edge
-$(u, v)$ is \textbf{safe} for A.
+$(u, v)$ is \textbf{safe} for A. {\color{red} Namely, $ A \cup {(u, v)}$ is also
+included in some minimum spanning tree for $G$.}
+
+\textbf{Proof} Let $T$ be a minimum spanning tree that includes $A$, and
+{\color{red}assume that $T$ does not contain the light edge $(u, v)$}, since if
+it does, the edge is obviously \textbf{safe} for A. We shall construct another
+minimum spanning tree $T^{'}$ that includes $A \cup {(u, v)}$ by using
+cut-and-paste technique, thereby showing that $(u, v)$ is a \textbf{safe} edge
+for $A$.
+
+The edge $(u, v)$ forms a {\color{red}cycle} with the edges on the simple path
+$p$ from $u$ to $v$ in $T$. Since $u$ and $v$ are on opposite sides of the cut
+$(S, V - S)$, at least one edge in $T$ lies on the simple path $p$ and also
+crosses the cut. Let $(x, y)$ be any such edge. The edge $(x, y)$ is not in $A$,
+because the cut respects $A$. Since $(x, y)$ is on the unique simple path from
+$u$ to $v$ in $T$, removing $(x, y)$ breaks $T$ into two components. Adding
+$(u, v)$ reconnects them to form a new spanning tree
+$T^{'} = T - \{(x, y)\} \cup \{(u, v)\}$.
+
+We next show that $T^{'}$ is a minimum spanning tree. Since $(u, v)$ is a light
+edge crossing $(S, V - S)$ and $(x, y)$ also crosses this cut,
+$w(u, v) \leq  w(x, y)$. Therefore,
+$w(T^{'}) = w(T) - w(x, y) + w(u, v) \leq w(T)$.
+
+When $w(T^{'}) == w(T)$, we know that $T^{'}$ is also a minimum spanning tree,
+so the edge $(u, v)$ is \textbf{safe} for $A$.
+
+When $w(T^{'}) < w(T)$, since we let $T$ be a minimum spanning tree and
+\textbf{assume} that $T$ does not contain the light edge $(u, v)$. Therefore,
+the \textbf{assume} is false, so $T$ must contain the light edge $(u, v)$, and
+the edge $(u, v)$ is \textbf{safe} for $A$.
+
+\subsection {Corollary}
+
+TODO: Prim -> Kruskal
+TODO: Kruskal -> Prim
 
