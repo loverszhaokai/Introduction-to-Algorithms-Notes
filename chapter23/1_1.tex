@@ -33,7 +33,7 @@ only safe edges.\\
 \textbf{Termination:} All edges added to A are in a minimum spanning tree, and
 so the set A returned in line 5 must be a minimum spanning tree.
 
-\subsection {Theorem}
+\subsection {Theorem 1.}
 
 Let $G=(V, E)$ be a connected, undirected graph with a real-valued weight
 function $\omega$ defined on $E$. Let $A$ be a subset of $E$ that is inclued in
@@ -71,8 +71,49 @@ When $w(T^{'}) < w(T)$, since we let $T$ be a minimum spanning tree and
 the \textbf{assume} is false, so $T$ must contain the light edge $(u, v)$, and
 the edge $(u, v)$ is \textbf{safe} for $A$.
 
-\subsection {Corollary}
+\subsection{Exercises}
+
+\subsubsection {23.1-1}
+
+Let $(u, v)$ be a minimum-weight edge in a connected graph $G$. Show that
+$(u, v)$ belongs to some minimum spanning tree of $G$.
+
+\textbf{Solution}
+
+Let $E_u$ be all the edges that connected to the point $u$.
+
+a. If there is only one edge connected to the point $u$, the edge belongs to
+\textbf{all} the minimum spanning tree of $G$.
+
+b. If there is more than one edge connected to the point $u$, we assume that
+{\color{red} $(u, v)$ is not in any minimum spanning trees of $G$}. There must
+be one edge $(u, x) { x != v}$ that is in some minimum spanning tree of $G$,
+since $w(u, v) < w(u, x)$, therefore, the edge $(u, x)$ can not be in some
+minimum spanning tree of $G$. So there is conflict and the assume is false. So,
+the $(u, v)$ belongs to some minimum spanning tree of $G$.
+
+\subsubsection {23.1-2}
+
+Professor Sabatier conjectures the following converse of Theorem 1. in Minimum
+Spanning Tree. Let $G = (V, E)$ be a connected, undirected graph with a
+real-valued weight function $w$ defined on $E$. Let $A$ be a subset of $E$ that
+is included in some minimum spanning tree for $G$, let $(S, V - S)$ be any cut
+of $G$ that respects $A$,and let $(u, v)$ be a safe edge for $A$ crossing
+$(S, V - S)$. Then, $(u, v)$ is a light edge for the cut. Show that the
+professor’s conjecture is incorrect by giving a counterexample.
+
+\textbf{Solution}
+
+a. Here is a special case, the point $v$ of $(u, v)$ only has one edge, and
+$w(u, v)$ is the largest, let $(x, y)$ be any other edge that crosses the cut,
+obviously, $(u, v)$ is not a light edge for the cut.
+
+b. Here is a generic case, assume that there is a light edge $(u^{'}, v^{'})$
+crossing the cut, so $w(u^{'}, v^{'}) < w(u, v)$.
+TODO
+
+
+
 
 TODO: Prim -> Kruskal
 TODO: Kruskal -> Prim
-
