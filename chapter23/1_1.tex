@@ -138,10 +138,23 @@ $T$ is a minimum spanning tree. So the assume is contradiction and
 $w(x, y) \geq w(u, v)$, so the edge $(u, v)$ is a light edge crossing some cut
 of the graph.
 
+\subsubsection {23.1-4}
 
+Give a simple example of a connected graph such that the set of edges
+\{$(u, v)$: there exists a cut $(S, V - S)$ such that $(u, v)$ is a light edge
+crossing $(S, V - S)$\} does not form a minimum spanning tree.
 
+\textbf{Solution}
 
+There is a quadrangle: $V={A,B,C,D}, E={(A,B), (A,C), (B,C), (B,D), (C,D)}$
+$, w(A,B)=w(A,C)=w(B,C)=1, w(B,D)=w(C,D)=2$. Obviously, $(A,B), (A,C) and (B,C)$
+are lights edges crossing some cut. So the tree edges can join the set. And they
+construct a circle, so the set can not form a minimum spanning tree.
 
+I think if we add {\color{red} respect} to the set, then the set will form a
+minimum spanning tee. Such as, \{$(u, v)$: there exists a cut $(S, V - S)$
+{\color{red} which repects this set} such that $(u, v)$ is a light edge
+crossing $(S, V - S)$\}, and the set will form a minimum spanning tree.
 
 
 
