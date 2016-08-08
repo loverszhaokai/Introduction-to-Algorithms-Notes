@@ -156,6 +156,21 @@ minimum spanning tee. Such as, \{$(u, v)$: there exists a cut $(S, V - S)$
 {\color{red} which repects this set} such that $(u, v)$ is a light edge
 crossing $(S, V - S)$\}, and the set will form a minimum spanning tree.
 
+\subsubsection {23.1-5}
+
+Let $e$ be a maximum-weight edge on some cycle of connected graph $G = (V, E)$.
+Prove that there is a minimum spanning tree of $G^{'} = (V, E - {e})$ that is
+also a minimum spanning tree of $G$. That is, there is a minimum spanning tree
+of $G$ that does not include $e$.
+
+\textbf{Solution}
+
+Assume that there is a minimum spanning tree $T$ of $G$ including the edge $e$.
+Firstly, we construct a tree $T^{'}$ same as $T$, and remove the edge $e$ from
+$T^{'}$. There is another edge $e^{'}$ on the same cycle of $G$ with $e$, and
+$T^{'}$ does not have a cycle after add $e^{'}$ to $T^{'}$. Since
+$w(e) \geq w(e^{'})$, so $w(T) \geq w(T^{'})$. Therefore, there is a minimum
+spanning tree $T^{'}$ that does not include $e$.
 
 
 
