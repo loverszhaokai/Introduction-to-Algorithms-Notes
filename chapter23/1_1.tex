@@ -173,6 +173,47 @@ $w(e) \geq w(e^{'})$, so $w(T) \geq w(T^{'})$. Therefore, there is a minimum
 spanning tree $T^{'}$ that does not include $e$.
 
 
+\subsubsection {23.1-6}
+
+Show that a graph has a unique minimum spanning tree if, for every cut of the
+graph, there is a unique light edge crossing the cut. Show that the converse is
+not true by giving a counterexample.
+
+\textbf{Solution}
+
+\textbf{1. Proof}
+
+Let $T$ be the minimum spanning tree that is constructed by the unique light
+edges crossing each cut. Assume that $T^{'}$ is another minimum spanning tree
+which is different from $T$. We are going to show that the assume is
+contradiction that $T^{'}$ can not be a minimum spanning tree.
+
+Let $x$ be the vertex which has different edges in $T$ and $T^{'}$. Let edge
+$(x, y_1)$ be the edge in $T$ but not in $T^{'}$. Let edge $(x, y_2)$ be the
+edge in $T^{'}$ but not in $T$.
+
+\textbf{Now we are going to show that $w(x, y_1) < w(x, y_2)$.} If we add the edge
+$(x, y_2)$ into the $T$, there will be an cycle including the edge $(x, y_1)$
+and $(x, y_2)$. Since there is a unique light edge for each cut, so
+$w(x, y_1) != w(x, y_2)$. Assume $w(x, y_1) > w(x, y_2)$, so we will get a
+better minimum spanning tree after replace $(x, y_1)$ with $(x, y_2)$. Since
+$T$ is a minimum spanning tree, so there can not be a better minimum spanning
+tree. So the assume that $w(x, y_1) > w(x, y_2)$ is contradiction. So
+$w(x, y_1) < w(x, y_2)$.
+
+If we add the edge $(x, y_1)$ into the $T^{'}$, there will an cycle including
+the edge $(x, y_1)$ and $(x, y_2)$. Since $w(x, y_1) < w(x, y_2)$, we can get
+a better minimum spanning tree if we replace $(x, y_2)$ with $(x, y_1)$. So the
+$T^{'}$ is not a minimum spanning tree. Therefore, the assume that $T^{'}$ is
+another minimum spanning tree which is different from $T$ is contradiction.
+
+\textbf{2. Counterexample}
+
+$G=(V, E)$ has three vertex: $A, B, C$ and two edges $(A, B), (A, C)$ which
+$w(A, B) = w(A, C)$. There is a unique minimim spanning tree. However, the cut
+of $\{A\}, \{B, C\}$ does not have a unique light spanning tree.
+
+
 
 
 
