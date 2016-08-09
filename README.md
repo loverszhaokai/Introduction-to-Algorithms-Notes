@@ -4,5 +4,7 @@
 
 ### Ubuntu
 
+```shell
 $ sudo apt-get install pdflatex texlive
 $ pdflatex itan.tex
+```
