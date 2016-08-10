@@ -242,6 +242,37 @@ $w(A, B) = w(B, C), w(C, A) = -1$, $w(A, D) = 1, w(B, D) = 2, w(C, D) = 3$, the
 minimum total weight is $w(A, B) + w(B, C) + w(C, A) + w(A, D) = -2$ but it has
 a cycle.
 
+
+{\color{red}the tree is a minimum spanning tree ??????}
+
+
+\subsubsection {23.1-8}
+
+Let $T$ be a minimum spanning tree of a graph $G$, and let $L$ be the sorted
+list of the edge weights of $T$. Show that for any other minimum spanning tree
+$T^{'}$ of $G$, the list $L$ is also the sorted list of edge weights of $T^{'}$.
+
+\textbf{Solution}
+
+We are going to replace edges in $T^{'}$ with the same weight edges in $T$. If
+finally $T^{'}$ is the same as $T$, then we are done.
+
+1 \space \textbf{while} find a vertex $u$ in $T^{'}$ which only have one different
+edge between $T^{'}$ and $T$ \\
+2 \space \space Let $(u, x)$ in $T^{'}$ but not in $T$ \\
+2 \space \space Let $(u, y)$ in $T$ but not in $T^{'}$ \\
+2 \space \space There is a cut $(S, V - S)$ which $S$ includes $x, y$ and
+excludes $u$. Since both the $T$ and $T^{'}$ are minimum spanning tree, so
+$w(u, x) == w(u, y)$, so we can replace $(u, x)$ with $(u, y)$.\\
+3 \space The final $T^{'}$ is the same as $T$, since each edge replaced in $T^{'}$
+has the same weight as in $T$, so we are done.
+
+Check This answer!!!
+
+
+
 \textbf{TODO}
+
 TODO: Prim -> Kruskal
+
 TODO: Kruskal -> Prim
