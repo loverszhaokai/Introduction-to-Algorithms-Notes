@@ -213,9 +213,35 @@ $G=(V, E)$ has three vertex: $A, B, C$ and two edges $(A, B), (A, C)$ which
 $w(A, B) = w(A, C)$. There is a unique minimim spanning tree. However, the cut
 of $\{A\}, \{B, C\}$ does not have a unique light spanning tree.
 
+\subsubsection {23.1-7}
 
+Argue that if all edge weights of a graph are positive, then any subset of edges
+that connects all verticles and has minimum total weight must be a tree. Give an
+example to show that the same conclusion does not follow if we allow some
+weights to be nonpositive.
 
+\textbf{Solution}
 
+Firstly, we prove that the subset is a graph. Secondly, we prove that the subset
+does not contain a cycle.
 
+1) Since the subset of edges connect all verticles, the subset must be a graph.
+
+2) Assume there is a cycle in the subset, since all the weights are positive,
+if we remove one edge in the cycle, we will get a lesser total weight. However,
+the subset has minimum total weight, so the assume is contradiction. So, there
+is no cycle in the subset.
+
+So the subset must be a tree.
+
+\textbf{Counterexample}
+
+$G = (V, E)$, $V = \{ A, B, C, D \}$,
+$E = \{ (A, B), (B, C), (C, A), (A, D), (B, D), (C, D) \}$,
+$w(A, B) = w(B, C), w(C, A) = -1$, $w(A, D) = 1, w(B, D) = 2, w(C, D) = 3$, the
+minimum total weight is $w(A, B) + w(B, C) + w(C, A) + w(A, D) = -2$ but it has
+a cycle.
+
+\textbf{TODO}
 TODO: Prim -> Kruskal
 TODO: Kruskal -> Prim
