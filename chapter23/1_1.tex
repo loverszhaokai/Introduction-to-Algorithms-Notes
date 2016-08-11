@@ -353,6 +353,19 @@ weight is less than the old weight, the $(u, v)$ is also the safe edge for the
 two subtrees. So $T$ is also a minimum spanning tree.
 
 
+\subsubsection{23.1-11}
+
+Give a graph $G$ and a minimum spanning tree $T$, suppose that we decrease the
+weight of one of the edges not in $T$. Give an algorithm for finding the minimum
+spanning tree in the modified graph.
+
+\textbf{Solution}
+
+Add the decreased edge to the $T$, then there must be a cycle and remove the
+edge whose weight is the largest. DFS traverse the $T$ whose time complexity is
+O(V).
+
+
 
 \textbf{TODO}
 
