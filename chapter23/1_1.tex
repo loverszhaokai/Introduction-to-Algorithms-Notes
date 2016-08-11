@@ -252,24 +252,47 @@ Let $T$ be a minimum spanning tree of a graph $G$, and let $L$ be the sorted
 list of the edge weights of $T$. Show that for any other minimum spanning tree
 $T^{'}$ of $G$, the list $L$ is also the sorted list of edge weights of $T^{'}$.
 
-\textbf{Solution}
+\textbf{Solution-1}
 
-We are going to replace edges in $T^{'}$ with the same weight edges in $T$. If
-finally $T^{'}$ is the same as $T$, then we are done.
+We are going to replace different edges in $T^{'}$ with the same weight edges
+in $T$. If finally $T^{'}$ is the same as $T$, then we are done.
 
-1 \space \textbf{while} find a vertex $u$ in $T^{'}$ which only have one different
-edge between $T^{'}$ and $T$ \\
-2 \space \space Let $(u, x)$ in $T^{'}$ but not in $T$ \\
-2 \space \space Let $(u, y)$ in $T$ but not in $T^{'}$ \\
-2 \space \space There is a cut $(S, V - S)$ which $S$ includes $x, y$ and
+1 \space \textbf{while} find a vertex $u$ in $T^{'}$ which only in two different
+edges in $T^{'}$ and $T$ \\
+2 \space \space \space Let $(u, x)$ in $T^{'}$ but not in $T$ \\
+2 \space \space \space Let $(u, y)$ in $T$ but not in $T^{'}$ \\
+2 \space \space \space There is a cut $(S, V - S)$ which $S$ includes $x, y$ and
 excludes $u$. Since both the $T$ and $T^{'}$ are minimum spanning tree, so
 $w(u, x) == w(u, y)$, so we can replace $(u, x)$ with $(u, y)$.\\
 3 \space The final $T^{'}$ is the same as $T$, since each edge replaced in $T^{'}$
 has the same weight as in $T$, so we are done.
 
-Check This answer!!!
+\textbf{Solution-2}
 
+\href{https://github.com/gzc/CLRS/}{Reference}
 
+Let list $A = { a_1, a_2, ... , a_(i-1), a_i, a(i+1), ..., a_n }$ be the sorted
+weights of $T$ in ascending order.
+
+Let list $B = { b_1, b_2, ... , b_(i-1), b_i, b(i+1), ..., b_n }$ be the sorted
+weights of $T$ in ascending order.
+
+Assume there is a difference weight between $A$ and $B$ which is the ith, so
+$a_i != b_i$. We are going to show that the assume is contradiction. We are
+going to prove when the $a_i > b_i$, and it is also applied to $a_i < b_i$.
+
+(1) If $b_i$ in the list $A$, then there is $a_j$ in the list $A$ and
+$a_j == b_i$. Since $a_x == b_x$ when $x$ is from $1$ to $(i - 1)$, $j \geq i$,
+so $b_i == a_j \geq a_i$, so $b_i \geq a_i$, so the assume is contradiction.
+
+(2) If $b_i$ does not in the list $A$, there will a cycle in $T$ when we add
+the edge of $b_i$. And $b_i$ is not less than any other weights in the cycle.
+There is must a edge in the cycle which does not exist in $T^{'}$. Let the edge
+be $a_x$ and $b_i \geq a_x$. Since $b_i \geq a_x \geq a_i$, the assume is
+contradiction.
+
+Therefore, the assume is contradiction, so there is not a difference weight
+between $A$ and $B$.
 
 \textbf{TODO}
 
