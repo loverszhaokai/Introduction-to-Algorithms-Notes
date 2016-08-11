@@ -294,6 +294,35 @@ contradiction.
 Therefore, the assume is contradiction, so there is not a difference weight
 between $A$ and $B$.
 
+\subsubsection{23.1-9}
+
+Let $T$ be a minimum spanning tree of a  graph $G = (V, E)$, and let $V^{'}$ be
+a subset of $V$. Let $T^{'}$ be the subgraph of $T$, and let $G^{'}$ be the
+subgraph of $G$ induced by $V^{'}$. Show that if $T^{'}$ is connected, then
+$T^{'}$ is a minimum spanning tree of $G^{'}$.
+
+\textbf{Solution}
+
+Firstly, we will prove that \textbf{when $T^{'}$ is connected, if we replace
+$T^{'}$ with another tree $T^{'}_1$ that connects all the $V^{'}$ in $G^{'}$,
+the $T$ of $G$ will be $T_1$, and $T_1$ is also a tree}. Assume that there is
+cycle in $T_1$ after replace $T^{'}$ with $T^{'}_1$. Let $A, B, A^{'}, B^{'}$
+in the cycle, and $A, B$ is in $V$ not in $V^{'}$, $A^{'}, B^{'}$ is in $V^{'}$,
+and $A^{'}$ is the first vertex that $A$ connects $T^{'}$, $B^{'}$ is the first
+vertex that $B$ connects $T^{'}$. Since $A, B$ is in the cycle, there must be
+several edges that connect $A$ and $B$. Also, there must be several edges
+connect $A^{'}$ and $B^{'}$. For all the trees in $G^{'}$ which connects all the
+$V^{'}$, $A^{'}$ connects $B^{'}$, so does the $T^{'}$, so there is also a
+cycle in $T$ which is a minimum spanning tree. So the assume is contradiction. 
+
+Secondly, assume that there is a lesser weight tree than $T^{'}$ in $G^{'}$,
+then replace $T^{'}$ with it, we will get a lesser weight tree in $G$.
+Obviously, the assume is contradiction. So there is not a lesser weight tree in
+$G^{'}$ than $T^{'}$. So $T^{'}$ is a minimum spanning tree of $G^{'}$.
+
+
+
+
 \textbf{TODO}
 
 TODO: Prim -> Kruskal
