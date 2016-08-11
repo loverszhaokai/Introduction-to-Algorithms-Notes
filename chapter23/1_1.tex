@@ -326,11 +326,31 @@ $G^{'}$ than $T^{'}$. So $T^{'}$ is a minimum spanning tree of $G^{'}$.
 
 \subsubsection{23.1-10}
 
+Given a graph $G$ and a minimum spanning tree $T$, suppose that we decrease the
+weight of one of the edges in $T$. Show that $T$ is still a minimum spanning
+tree for $G$. More formally, let $T$ be a minimum spanning tree for $G$ with
+edge weights given byy weight function $w$. Choose one edge $(x, y) \in T$ and a
+positive number $k$, and define the weight function $w^{'}$ by
+$$
+w^{'}(u, v) = \left\{ \begin{array}{rl}
+ w(u, v) &\mbox{ if $(u, v) \neq (x, y)$,} \\
+ w(x, y) - k &\mbox{ if $(u, v) == (x, y)$.}
+       \end{array} \right.
+$$
 
+Show that $T$ is a minimum spanning tree for $G$ with edge weights given by
+$w^{'}$.
 
+\textbf{Solution}
 
-
-
+Let $(u, v)$ be the edge whose weight is decreased. If we remove the $(u, v)$ in
+$T$, we can get two subtrees of $T$. Since only the weight of $(u, v)$ is
+changed, the subtrees of $T$ is also minimum spanning trees of its sub graph
+which is proved in \textbf{23.1-9}. So we should find a safe edge to connect
+to two subtrees which was $(u, v)$. Obviously, the old weight of $(u, v)$ is
+less or equal than any edges that connects the two subtrees. Since the new
+weight is less than the old weight, the $(u, v)$ is also the safe edge for the
+two subtrees. So $T$ is also a minimum spanning tree.
 
 
 
