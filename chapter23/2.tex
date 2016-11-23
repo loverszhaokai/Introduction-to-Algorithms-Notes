@@ -1,4 +1,20 @@
 \section {The algorithms of Kruskal and Prim}
 
-\subsection {Definition}
+Both \textbf{Kruskal} and \textbf{Prim} use a specific rule to \textbf{determine
+  a safe edge} in line 3 of GENERIC-MST.
 
+In Kruskal's algorithm, the set \textbf{A} is a forest whose vertices are all
+those of the given graph. The safe edge added to \textbf{A} is always a
+\textbf{least-weight} edge in the graph that \textbf{connects two distinct
+  components}.
+
+In Prim's algorithm, the set \textbf{A} forms a single tree. The safe edge added
+to \textbf{A} is always a \textbf{least-weight edge connecting the tree to a
+  vertex not in the tree}.
+
+\subsection {Kruskal}
+
+
+
+
+\subsection {Prim}
