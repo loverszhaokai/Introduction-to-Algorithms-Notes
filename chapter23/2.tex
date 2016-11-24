@@ -14,6 +14,22 @@ to \textbf{A} is always a \textbf{least-weight edge connecting the tree to a
 
 \subsection {Kruskal}
 
+Kruskal's algorithm finds a safe edge to add to the growing forest by finding,
+of all the edges that connect any two trees in the forest, an edge $(u, v)$ of
+least weight.
+
+\textbf{MST-Kruskal}$(G, w)$\\
+1\space\space $A$ = $\varnothing$\\
+2\space\space \textbf{for} each vertex $v \in G.V$\\
+3\space\space\space\space MAKE-SET$(v)$\\
+4\space\space sort the edges of $G.E$ into nondecreasing order by weight $w$\\
+5\space\space \textbf{for} each edge $(u, v) \in G.E$, taken in nondecreasing order by weight\\
+6\space\space\space\space \textbf{if} FIND-SET($u$) $\neq$ FIND-SET($v$)\\
+7\space\space\space\space\space\space\space $A = A \cup {(u, v)}$\\
+8\space\space\space\space\space\space\space UNION$(u, v)$
+
+
+{\color{red}TODO: time complexity after finish Chapter 21.}
 
 
 
