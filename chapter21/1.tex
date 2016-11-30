@@ -69,5 +69,25 @@ initial sets   & \{a\} \{b\} \{c\} \{d\} \{e\} \{f\} \{g\} \{h\} \{i\} \{j\} \{k
 
 \subsubsection {21.1-2}
 
+Show that after all edges are processed by CONNECTED-COMPONENTS, two vertices
+are in the same connected component \textbf{if and only if} they are in the same
+set.
 
+\textbf{Solution}
 
+If two vertices are in the same connected component, there must be some edges
+that connect the two vertices, so they must be in the same set.
+
+If two vertices are in the same set, there must be some edges that connect the
+two vertices, so they must be in the same connected component.
+
+\subsubsection {21.1-3}
+
+During the execution of CONNECTED-COMPONENTS on an undirected graph $G = (V, E)$
+with $k$ connected components, how many times is FIND-SET called? How many times
+is UNION called? Express your answers in terms of $|V|, |E|$, and $k$.
+
+\textbf{Solution}
+
+FIND-SET: $|E| * 2$\\
+UNION   : $|V| - k$
