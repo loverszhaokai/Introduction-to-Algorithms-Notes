@@ -91,3 +91,30 @@ is UNION called? Express your answers in terms of $|V|, |E|$, and $k$.
 
 FIND-SET: $|E| * 2$\\
 UNION   : $|V| - k$
+
+\subsection {My Implementation}
+
+Let $A$ be the array that contains the minimum value of the set. For example,
+$A[6] = 3$ indicates that the minimum value of the set, which $6$ belongs to, is
+$3$. We will call the minimum value of the set as \textbf{ID}.
+
+Let $S$ be the array that contains the value of each set. For example,
+$S[3]=3, 6$ indicates that the set, whose ID is $3$, contains $3$ and the set
+whose ID is $6$.
+
+\textbf{FIND-SET($x$)}\\
+1\hspace*{2ex} \textbf{return} $A[x]$\\
+
+\textbf{UNION($x, y$)}\\
+1\hspace*{2ex} $a = FIND-SET(x)$\\
+2\hspace*{2ex} $b = FIND-SET(y)$\\
+3\hspace*{2ex} \textbf{if} $a > b$\\
+4\hspace*{4ex} $swap(a, b), swap(x, y)$\\
+5\hspace*{2ex} \textbf{for} v in $S[b]$\\
+6\hspace*{4ex} $A[v] = a$\\
+7\hspace*{2ex} $S[a].append(b)$
+
+Time Complexity: $O(NlgN)$\\
+Space Complexity: $O(N)$
+
+
